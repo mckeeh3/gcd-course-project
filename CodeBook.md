@@ -1,5 +1,16 @@
-##Code Book - 
+##Code Book - Tidy UCI HAR dataset
 =====
+### Dataset Cleanup Transdformations
+The tidy dat was created with the following transformation steps.
+
+The train and test subdirectories contain data sets, lables and subjects. The 3 files in each directory are merged by column. 
+
+The mergrd train and test data is them merged togehter by rows.
+
+Next the subset of mean and std columns are extracted and the merged and filtered data is given descriptive column names. The column names are extracted from the features.txt file. 
+
+The merged data is then meltd and cast stacking by subject and activity. This is the final processing step, the output is the tidy data.
+
 ### Study Design
 
 _The following documentation copied from [Data Set Information]
