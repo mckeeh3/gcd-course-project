@@ -42,7 +42,10 @@ mergeTrainTestDataSets <- function() {
     }
 
     print("merge train and test data")
-    return(rbind(mergeTrainDataSet(), mergeTestDataSet()))
+    return(rbind(
+            mergeTrainDataSet(), 
+            mergeTestDataSet()
+        ))
 }
 
 extractMeanStdFeatureColumnNames <- function(data) {
