@@ -24,7 +24,7 @@ downloadUnzipDataSet <- function() {
 
 mergeTrainTestDataSets <- function() {
     mergeTrainDataSet <- function() {
-        print("merge train files")
+        print("  merge train files")
         return(cbind(
                 read.table(paste0(dataSetDirectory, "/train/X_train.txt")),
                 read.table(paste0(dataSetDirectory, "/train/subject_train.txt")),
@@ -33,7 +33,7 @@ mergeTrainTestDataSets <- function() {
     }
 
     mergeTestDataSet <- function() {
-        print("merge test files")
+        print("  merge test files")
         return(cbind(
                 read.table(paste0(dataSetDirectory, "/test/X_test.txt")),
                 read.table(paste0(dataSetDirectory, "/test/subject_test.txt")),
@@ -87,3 +87,8 @@ tidyDataSet <- function() {
 tidy <- tidyDataSet()
 
 print("see results in variable tidy")
+
+tidyFilename <- "uci-har-dataset-tidy.csv"
+write.csv(tidy, file = tidyFilename, quote = FALSE)
+
+print(paste("tidy data written to file", tidyFilename))
